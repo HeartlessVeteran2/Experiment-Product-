@@ -1,5 +1,9 @@
 # Experiment Product - What's Around Me Food App
 
+[![Build & Test](https://github.com/Heartless-Veteran/Experiment-Product-/actions/workflows/ci.yml/badge.svg)](https://github.com/Heartless-Veteran/Experiment-Product-/actions/workflows/ci.yml)
+[![Lint](https://github.com/Heartless-Veteran/Experiment-Product-/actions/workflows/lint.yml/badge.svg)](https://github.com/Heartless-Veteran/Experiment-Product-/actions/workflows/lint.yml)
+[![CodeQL](https://github.com/Heartless-Veteran/Experiment-Product-/actions/workflows/codeql.yml/badge.svg)](https://github.com/Heartless-Veteran/Experiment-Product-/actions/workflows/codeql.yml)
+
 An Android application built with modern Android development practices, featuring a clean architecture design and Mapbox integration for location-based food discovery.
 
 ## Tech Stack
@@ -159,6 +163,18 @@ Required permissions (already configured in AndroidManifest.xml):
 - `ACCESS_FINE_LOCATION` - For precise location
 - `ACCESS_COARSE_LOCATION` - For approximate location
 - `ACCESS_NETWORK_STATE` - For network availability
+
+## CI/CD Workflows
+
+The project includes automated CI/CD workflows for code quality and releases:
+
+- **Build & Test** - Automatically builds and tests on every push/PR
+- **Lint** - Runs Android Lint checks for code quality
+- **CodeQL** - Security analysis for vulnerability scanning
+- **Dependabot** - Automated dependency updates
+- **Release** - Automated APK/AAB builds on version tags
+
+See [CI_CD_WORKFLOWS.md](./CI_CD_WORKFLOWS.md) for detailed documentation.
 
 ## Next Steps
 
