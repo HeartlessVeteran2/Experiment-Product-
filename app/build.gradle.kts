@@ -81,8 +81,8 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
     
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
     
     // Room
     val roomVersion = "2.6.0"
@@ -91,7 +91,7 @@ dependencies {
     ksp("androidx.room:room-compiler:$roomVersion")
     
     // Kotlinx Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
     
     // Location Services
     implementation("com.google.android.gms:play-services-location:21.0.1")
