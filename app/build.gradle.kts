@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
-    kotlin("plugin.serialization") version "1.9.25"
+    kotlin("plugin.serialization") version "2.3.10"
 }
 
 android {
