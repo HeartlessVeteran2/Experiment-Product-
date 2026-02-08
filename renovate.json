@@ -18,10 +18,7 @@
     {
       "matchHost": "api.mapbox.com",
       "hostType": "maven",
-      "username": "mapbox",
-      "encrypted": {
-        "password": "MAPBOX_DOWNLOADS_TOKEN"
-      }
+      "username": "mapbox"
     }
   ]
 }
