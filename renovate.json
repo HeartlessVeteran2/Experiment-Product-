@@ -2,5 +2,24 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "^com\\.mapbox\\.maps:",
+        "^com\\.mapbox\\.extension:"
+      ],
+      "registryUrls": [
+        "https://api.mapbox.com/downloads/v2/releases/maven"
+      ]
+    }
+  ],
+  "hostRules": [
+    {
+      "matchHost": "api.mapbox.com",
+      "hostType": "maven",
+      "username": "mapbox",
+      "password": "{{ env.MAPBOX_DOWNLOADS_TOKEN }}"
+    }
   ]
 }
