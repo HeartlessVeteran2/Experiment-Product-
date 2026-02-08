@@ -110,7 +110,7 @@ class StubPlacesRepository @Inject constructor() : PlacesRepository {
                     val line = LineMapper.mapToLine(category)
                     
                     val station = Station(
-                        id = "${category}_${placeName.replace(" ", "_").lowercase()}_$index",
+                        id = "${category}_${placeName.replace(" ", "_").lowercase(Locale.ROOT)}_$index",
                         name = placeName,
                         distance = distance,
                         line = line.displayName,

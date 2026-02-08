@@ -117,15 +117,15 @@ lineColor = line.colorHex
 ## Quality Assurance
 
 ### Code Review
-✅ Passed with no issues
+- [ ] Perform code review for this change set following the project's review checklist.
 
 ### Security Check (CodeQL)
-✅ No vulnerabilities detected
+- [ ] Run a CodeQL analysis for this branch or pull request and review any reported alerts.
 
 ### Build Status
 ⚠️ Pre-existing dependency version conflicts (unrelated to this PR)
-✅ Code compiles successfully
-✅ No syntax errors
+- [ ] Run the appropriate Gradle task (e.g., `./gradlew assembleDebug`) to verify the project builds successfully.
+- [ ] Run syntax and static analysis checks (e.g., `./gradlew lint`) to confirm there are no syntax-related issues.
 
 ---
 

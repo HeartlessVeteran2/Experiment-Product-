@@ -8,8 +8,8 @@ import com.heartless.experimentproduct.domain.location.UserLocation
  * @param id Unique identifier for the station
  * @param name Name of the establishment
  * @param distance Distance from user's location in meters
- * @param line Category/type of establishment (e.g., "restaurant", "cafe")
- * @param lineColor Color hex code for UI visualization of the category
+ * @param line Line assignment for this station (e.g., "Green", "Orange", "Red", "Purple", "White")
+ * @param lineColor Color hex code for UI visualization of the line
  * @param openUntil Closing time as formatted string (e.g., "9:00 PM"), null if not available
  * @param closingSoon True if the place is closing within 1 hour
  * @param location Coordinates of the station

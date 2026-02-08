@@ -1,6 +1,7 @@
 package com.heartless.experimentproduct.domain.places
 
 import com.heartless.experimentproduct.domain.model.Line
+import java.util.Locale
 
 /**
  * Utility for mapping place types/categories to Lines.
@@ -29,26 +30,26 @@ object LineMapper {
      * @return The Line this place belongs to
      */
     fun mapToLine(placeType: String, allTypes: List<String> = emptyList()): Line {
-        val normalizedType = placeType.lowercase().replace(" ", "_")
-        val allNormalizedTypes = allTypes.map { it.lowercase().replace(" ", "_") }
+        val normalizedType = placeType.lowercase(Locale.ROOT).replace(" ", "_")
+        val allNormalizedTypes = allTypes.map { it.lowercase(Locale.ROOT).replace(" ", "_") }
         
         // Priority 1: Gas stations always go to Red Line (even if they have food)
-        if (normalizedType in redLineTypes || allNormalizedTypes.any { it in redLineTypes }) {
+        if (matchesAny(normalizedType, allNormalizedTypes, redLineTypes)) {
             return Line.RED
         }
         
         // Priority 2: Pharmacies always go to Purple Line
-        if (normalizedType in purpleLineTypes || allNormalizedTypes.any { it in purpleLineTypes }) {
+        if (matchesAny(normalizedType, allNormalizedTypes, purpleLineTypes)) {
             return Line.PURPLE
         }
         
         // Priority 3: Coffee/bakery/juice establishments go to Orange Line
-        if (normalizedType in orangeLineTypes || allNormalizedTypes.any { it in orangeLineTypes }) {
+        if (matchesAny(normalizedType, allNormalizedTypes, orangeLineTypes)) {
             return Line.ORANGE
         }
         
         // Priority 4: Convenience stores and grocery go to White Line
-        if (normalizedType in whiteLineTypes || allNormalizedTypes.any { it in whiteLineTypes }) {
+        if (matchesAny(normalizedType, allNormalizedTypes, whiteLineTypes)) {
             return Line.WHITE
         }
         
@@ -57,20 +58,15 @@ object LineMapper {
     }
     
     /**
-     * Green Line types: Restaurants, delis, food trucks, and general food establishments
+     * Helper function to check if a type or any of its additional types match a given type set.
      */
-    private val greenLineTypes = setOf(
-        "restaurant",
-        "deli",
-        "food_truck",
-        "food",
-        "meal_delivery",
-        "meal_takeaway",
-        "bar",
-        "bistro",
-        "fast_food",
-        "food_court"
-    )
+    private fun matchesAny(
+        normalizedType: String,
+        allNormalizedTypes: List<String>,
+        typeSet: Set<String>
+    ): Boolean {
+        return normalizedType in typeSet || allNormalizedTypes.any { it in typeSet }
+    }
     
     /**
      * Orange Line types: Coffee shops, bakeries, juice bars
