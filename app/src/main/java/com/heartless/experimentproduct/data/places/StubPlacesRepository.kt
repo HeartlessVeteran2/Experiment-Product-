@@ -2,6 +2,7 @@ package com.heartless.experimentproduct.data.places
 
 import com.heartless.experimentproduct.domain.location.UserLocation
 import com.heartless.experimentproduct.domain.model.Station
+import com.heartless.experimentproduct.domain.places.LineMapper
 import com.heartless.experimentproduct.domain.repository.PlacesRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -49,20 +50,6 @@ class StubPlacesRepository @Inject constructor() : PlacesRepository {
         "convenience_store",
         "grocery",
         "food_truck"
-    )
-
-    /**
-     * Color mapping for different establishment categories.
-     */
-    private val categoryColors = mapOf(
-        "restaurant" to "#E63946",
-        "cafe" to "#F77F00",
-        "bakery" to "#FCBF49",
-        "gas_station" to "#06AED5",
-        "pharmacy" to "#073B4C",
-        "convenience_store" to "#118AB2",
-        "grocery" to "#06D6A0",
-        "food_truck" to "#EF476F"
     )
 
     /**
@@ -119,14 +106,15 @@ class StubPlacesRepository @Inject constructor() : PlacesRepository {
                         "${placeNames[0]} ${index + 1}"
                     }
                     
+                    // Use LineMapper to determine the line and color
+                    val line = LineMapper.mapToLine(category)
+                    
                     val station = Station(
                         id = "${category}_${placeName.replace(" ", "_").lowercase()}_$index",
                         name = placeName,
                         distance = distance,
-                        line = category.replace("_", " ").replaceFirstChar { 
-                            if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() 
-                        },
-                        lineColor = categoryColors[category] ?: "#6C757D",
+                        line = line.displayName,
+                        lineColor = line.colorHex,
                         openUntil = closingInfo.first,
                         closingSoon = closingInfo.second,
                         location = location
