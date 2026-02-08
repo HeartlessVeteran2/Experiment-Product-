@@ -99,6 +99,7 @@ dependencies {
     // Mapbox
     implementation("com.mapbox.maps:android:11.0.0")
     implementation("com.mapbox.extension:maps-compose:11.0.0")
+    implementation("com.mapbox.search:mapbox-search-android:2.0.0")
     
     // Debug
     debugImplementation("androidx.compose.ui:ui-tooling")
