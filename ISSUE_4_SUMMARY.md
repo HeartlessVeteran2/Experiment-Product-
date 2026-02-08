@@ -147,7 +147,7 @@ The implementation is ready for real place APIs:
 2. **New Place Types**: Easy to add to LineMapper's type sets
 3. **Custom Priority Rules**: Priority logic can be adjusted without changing Station model
 4. **API Integration**: Works with Mapbox, Google Places, or any place API
-5. **No Breaking Changes**: Station model unchanged, fully backward compatible
+5. **Behavior Change**: Station schema is unchanged, but `Station.line` now represents the line display name (e.g., "Green") instead of the raw category/type, so downstream usages should be updated accordingly
 
 ---
 
@@ -168,4 +168,4 @@ The implementation is ready for real place APIs:
 
 ## Conclusion
 
-All requirements from Issue #4 have been successfully implemented. The five-line category assignment system is complete, tested, and ready for use. Every scan result will have a proper line assignment with the correct color, and ambiguous types are handled according to the priority rules specified in the requirements.
+All requirements from Issue #4 have been successfully implemented. The five-line category assignment system is fully implemented, manually verified (see `LINE_ASSIGNMENT_VERIFICATION.md`), and ready for use. Every scan result will have a proper line assignment with the correct color, and ambiguous types are handled according to the priority rules specified in the requirements.
