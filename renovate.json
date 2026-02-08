@@ -18,7 +18,8 @@
     {
       "matchHost": "api.mapbox.com",
       "hostType": "maven",
-      "username": "mapbox"
+      "username": "mapbox",
+      "password": "{{ env.MAPBOX_DOWNLOADS_TOKEN }}"
     }
   ]
 }
