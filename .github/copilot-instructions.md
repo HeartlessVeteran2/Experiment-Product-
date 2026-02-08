@@ -69,7 +69,7 @@ app/src/main/java/com/heartless/experimentproduct/
 
 2. **Domain Layer** (`domain/`):
    - Contains business logic and models
-   - Written in Kotlin; may depend on selected Android-backed services (e.g., location) where needed
+   - Written in Kotlin; may depend on selected Android framework services (e.g., location services via `LocationService`) where needed
    - Use cases encapsulate specific business operations
    - Repository interfaces and service abstractions define contracts
 
@@ -163,13 +163,14 @@ class MyViewModel @Inject constructor(
 - **Preferred pattern (for all new or refactored code):**
   - Define repository interfaces in `domain/repository/`
   - Implement repositories in `data/repository/` or feature-specific folders
-  - Repositories should transform data entities (e.g., `LocationPinEntity`) to domain models (e.g., `LocationPin`)
+  - Data layer implementations should transform data entities (e.g., `LocationPinEntity`) to domain models (e.g., `LocationPin`) internally before returning results
   - Use `Flow` for reactive data streams
 - **Legacy/transition code:**
-  - Some existing use cases (for example, `GetLocationPinsUseCase` in `domain/`) currently depend directly on `data.repository.LocationPinRepository` and `data.database.LocationPinEntity`.
+  - Some existing use cases (for example, `GetLocationPinsUseCase` in `domain/`) currently depend directly on concrete `data.repository.LocationPinRepository` class and perform entity-to-domain mapping within the use case itself, importing `data.database.LocationPinEntity`.
   - Do **not** copy this pattern for new features. When you touch these legacy areas, prefer to:
-    - Introduce a domain-level repository interface in `domain/repository/`, and
-    - Move entity-to-domain mapping logic into the data layer implementation.
+    - Introduce a domain-level repository interface in `domain/repository/`
+    - Move entity-to-domain mapping logic into the data layer implementation
+    - Have the use case depend only on the domain interface
   - Until that refactor is completed, keep behavior stable and avoid partial changes that could break the existing flow.
 
 ### 8. Use Cases
