@@ -8,7 +8,7 @@ This project follows semantic versioning and maintains security support only for
 | ---------------- | ------------------ | ------------------------------------------------------------------------------- |
 | `main`           | :white_check_mark: | Actively developed; receives all security fixes and new features.              |
 | `v2.x`           | :white_check_mark: | Current stable major version; receives security and critical bug fixes.        |
-| `v1.x`           | :white_check_mark: | Maintenance-only; receives critical security fixes until 2025-12-31.           |
+| `v1.x`           | :white_check_mark: | Maintenance-only; receives critical security fixes until 2026-12-31.           |
 | `< v1.0`         | :x:                | End-of-life; no further updates, including security fixes.                     |
 
 ## Reporting a Vulnerability
