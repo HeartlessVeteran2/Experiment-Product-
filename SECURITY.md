@@ -25,7 +25,7 @@ If you are unable to use GitHub Security Advisories for any reason, please open 
 
 - **Acknowledgment:** We aim to acknowledge receipt of your report within **5 business days**.
 - **Initial assessment:** We will perform an initial triage and risk assessment, typically within **10 business days** of acknowledgment.
-- **Status updates:** While the issue is being investigated and fixed, we will provide progress updates at least every **7 days** until resolution, or until we determine that the report is not a security issue.
+- **Status updates:** While the issue is being investigated and fixed, we will provide progress updates at least every **7 business days** until resolution, or until we determine that the report is not a security issue.
 
 ### Disclosure and Remediation
 
