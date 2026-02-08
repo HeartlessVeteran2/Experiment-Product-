@@ -3,4 +3,6 @@
     <string name="app_name">Experiment Product</string>
     <string name="map_loading">Loading map...</string>
     <string name="location_permission_required">Location permission is required</string>
+    <!-- Public Mapbox token for runtime API access (Search, Geocoding, etc) -->
+    <string name="mapbox_access_token" translatable="false">pk.YOUR_PUBLIC_MAPBOX_TOKEN_HERE</string>
 </resources>
