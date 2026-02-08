@@ -7,8 +7,7 @@ This project follows semantic versioning and maintains security support only for
 | Version / Branch | Supported          | Support details                                                                 |
 | ---------------- | ------------------ | ------------------------------------------------------------------------------- |
 | `main`           | :white_check_mark: | Actively developed; receives all security fixes and new features.              |
-| `v2.x`           | :white_check_mark: | Current stable major version; receives security and critical bug fixes.        |
-| `v1.x`           | :white_check_mark: | Maintenance-only; receives critical security fixes until 2026-12-31.           |
+| `v1.0.x`         | :white_check_mark: | Current stable version; receives security and critical bug fixes.              |
 | `< v1.0`         | :x:                | End-of-life; no further updates, including security fixes.                     |
 
 ## Reporting a Vulnerability
@@ -20,7 +19,7 @@ If you believe you have found a security vulnerability in this project, please r
   2. Open the **Security** tab.  
   3. Click **"Report a vulnerability"** and follow the instructions to submit a private security advisory.
 
-- **Private security email (alternative):** If you are unable to use GitHub Security Advisories for any reason, please send an email to **security@androrat-security.example** with a clear subject line (for example, `"Security vulnerability report for AndroRAT"`), and include detailed information about the issue. This inbox is monitored only by the maintainers; your report will not be made public without your consent and coordinated disclosure.
+If you are unable to use GitHub Security Advisories for any reason, please open a minimal issue indicating that you have a security report and prefer to share details privately. Do **not** include any sensitive technical details in that public issue; maintainers will provide a private contact method for further communication.
 
 ### What to Expect
 
