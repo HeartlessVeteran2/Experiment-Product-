@@ -24,7 +24,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: 'gradle'
     
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
@@ -36,11 +35,6 @@ jobs:
     
     - name: Build with Gradle
       run: ./gradlew build --no-daemon --stacktrace
-      env:
-        MAPBOX_DOWNLOADS_TOKEN: ${{ secrets.MAPBOX_DOWNLOADS_TOKEN }}
-    
-    - name: Run Unit Tests
-      run: ./gradlew test --no-daemon --stacktrace
       env:
         MAPBOX_DOWNLOADS_TOKEN: ${{ secrets.MAPBOX_DOWNLOADS_TOKEN }}
     
