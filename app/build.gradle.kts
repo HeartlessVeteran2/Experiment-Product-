@@ -73,7 +73,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
     
     // Accompanist for permissions
-    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
+    implementation("com.google.accompanist:accompanist-permissions:0.37.3")
     
     // Hilt
     implementation("com.google.dagger:hilt-android:2.48.1")
