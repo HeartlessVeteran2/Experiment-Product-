@@ -91,7 +91,7 @@ dependencies {
     ksp("androidx.room:room-compiler:$roomVersion")
     
     // Kotlinx Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
     
     // Location Services
     implementation("com.google.android.gms:play-services-location:21.0.1")
